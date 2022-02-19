@@ -3,9 +3,11 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h3>Resultados</h3>
-    <div class="jumbotron">
-        <div class="col-md-12">
-            teste
-        </div>
+    <div class="jumbotron" >
+        <asp:GridView 
+            ID="GridViewCliente" 
+            CssClass="table table-bordered"
+            runat="server">
+        </asp:GridView>
     </div>       
 </asp:Content>
