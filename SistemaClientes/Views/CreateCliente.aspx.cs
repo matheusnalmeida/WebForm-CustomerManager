@@ -11,7 +11,7 @@ namespace SistemaClientes.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ComparevalidatorDataNascimento.ValueToCompare = DateTime.Now.ToShortDateString();
         }
 
         protected void ClearData(object sender, EventArgs e)
@@ -21,13 +21,13 @@ namespace SistemaClientes.Views
 
         protected void RegisterData(object sender, EventArgs e)
         {
-            
+            Response.Redirect("~/Views/ReadCliente.aspx");            
         }
         
         private void ClearData() 
         {
             TextBoxNome.Text = "";
-            DropDownListSexo.SelectedValue = "Escolha...";
+            DropDownListSexo.SelectedValue = "";
             TextBoxCpf.Text = "";
             TextBoxRG.Text = "";
             TextBoxDataNascimento.Text = "";
