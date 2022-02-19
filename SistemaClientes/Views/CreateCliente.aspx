@@ -43,7 +43,7 @@
         <div class="form-row" style="margin-top: 130px;">      
             <div class="col-md-4 mb-4">
                 <asp:Button ID="ButtonClear" CssClass="btn btn-danger" runat="server" Text="Limpar" OnClick="ClearData"/>
-                <asp:Button ID="ButtonRegister" CssClass="btn btn-success" runat="server" Text="Registrar" OnClick="RegisterData"/>
+                <asp:Button ID="ButtonRegister" CssClass="btn btn-success" runat="server" Text="OK" OnClick="RegisterData"/>
             </div>            
         </div>
     </div>
