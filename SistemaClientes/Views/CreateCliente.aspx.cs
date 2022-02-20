@@ -1,4 +1,5 @@
-﻿using SistemaClientes.Models;
+﻿using SistemaClientes.Infra;
+using SistemaClientes.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +11,6 @@ namespace SistemaClientes.Views
 {
     public partial class CreateCliente : System.Web.UI.Page
     {
-        private const string _Session_Clientes_Key = "Clientes";
-
         protected void Page_Load(object sender, EventArgs e)
         {
             ComparevalidatorDataNascimento.ValueToCompare = DateTime.Now.ToShortDateString();
@@ -33,7 +32,7 @@ namespace SistemaClientes.Views
         {
             try
             {
-                var clientes = GetSessionClientes();
+                var clientes = MemoryContext.GetInstance().TableCliente;
 
                 var novoCliente = new Cliente()
                 {
@@ -54,16 +53,6 @@ namespace SistemaClientes.Views
             {
                 Response.Write(string.Format("<script>alert('{0}');</script>", ex.Message));
             }
-        }
-
-        private Dictionary<string, Cliente> GetSessionClientes()
-        {
-            if (Session[_Session_Clientes_Key] == null)
-            {
-                Session[_Session_Clientes_Key] = new Dictionary<string, Cliente>();
-            }
-
-            return (Dictionary<string, Cliente>)Session[_Session_Clientes_Key];
         }
 
         private void ClearData() 
