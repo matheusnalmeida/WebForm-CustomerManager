@@ -18,6 +18,10 @@ namespace SistemaClientes.Views
             if (!IsPostBack) 
             {
                 var clientes = MemoryContext.GetInstance().TableCliente;
+                if (!clientes.Any())
+                {
+                    LabelNenhumCliente.Visible = true;
+                }
                 DataTable dt = DataTableUtil.GenerateDataTableFromClass(clientes.Select(it => it.Value).ToList());
                 GridViewCliente.DataSource = dt;
                 GridViewCliente.DataBind();

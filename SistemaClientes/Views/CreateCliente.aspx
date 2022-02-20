@@ -56,7 +56,7 @@
                     ForeColor="Red"
                     ValidationGroup="Submit"
                     >*</asp:RegularExpressionValidator>
-                <asp:TextBox ID="TextBoxCpf" runat="server" class="form-control" MaxLength="11"></asp:TextBox>         
+                <asp:TextBox ID="TextBoxCpf" runat="server" class="form-control"></asp:TextBox>         
              </div>
         </div>
         <div class="form-row" style="margin-top: 80px;">            

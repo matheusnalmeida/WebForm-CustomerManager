@@ -9,5 +9,6 @@
             CssClass="table table-bordered"
             runat="server">
         </asp:GridView>
+        <asp:label ID="LabelNenhumCliente" Visible="false" style="display: table; margin: 0 auto;" runat="server" Font-Bold="true" Font-Size="Large">Nenhum Aluno Cadastrado!</asp:label>
     </div>       
 </asp:Content>
